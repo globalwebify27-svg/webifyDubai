@@ -54,7 +54,7 @@ function FooterLogo() {
 export default function Footer() {
   return (
     <footer id="contact" className="bg-[#080A09] border-t border-white/10">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-6 lg:px-12 2xl:px-16">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-16 border-b border-white/10">
 

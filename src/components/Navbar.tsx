@@ -41,7 +41,7 @@ export default function Navbar() {
             : "bg-white border-b border-[#E5E7E5]"
         }`}
       >
-        <nav className="max-w-[1440px] mx-auto px-6 lg:px-12 h-[64px] flex items-center justify-between">
+        <nav className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-6 lg:px-12 2xl:px-16 h-[64px] flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"

@@ -33,7 +33,7 @@ const steps = [
 export default function ProcessSection() {
   return (
     <section className="bg-white border-t border-[#E5E7E5] py-24 lg:py-32">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-6 lg:px-12 2xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start">
 
           {/* LEFT — Text */}

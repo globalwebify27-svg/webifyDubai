@@ -41,7 +41,7 @@ const highlights = [
 export default function StatisticsSection() {
   return (
     <section className="bg-white border-y border-[#E5E7E5] py-10 sm:py-16 relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-4 sm:px-6 lg:px-12 2xl:px-16 relative z-10">
         
         {/* Header — Direct from globalwebify.com, short & minimal */}
         <motion.div

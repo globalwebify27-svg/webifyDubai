@@ -79,7 +79,7 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className="bg-[#F8FAFC] pt-8 sm:pt-10 lg:pt-12 pb-14 sm:pb-16 lg:pb-20 border-t border-gray-100">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-4 sm:px-6 lg:px-12 2xl:px-16">
         {/* Header Section — Centered & Balanced */}
         <motion.div
           className="text-center max-w-[1100px] mx-auto mb-8 sm:mb-10 px-4"

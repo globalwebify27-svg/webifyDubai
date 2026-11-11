@@ -56,7 +56,7 @@ export default function LeadFormSection() {
 
   return (
     <section id="lead-form" className="py-16 sm:py-20 lg:py-24 bg-white border-y border-[#E5E7E5] relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-12">
+      <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-5 sm:px-6 lg:px-12 2xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.3fr] gap-10 lg:gap-16 items-start">
           
           {/* LEFT: Funnel Value Proposition & Guarantees */}

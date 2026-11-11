@@ -116,12 +116,12 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#F7F7F5]/40 via-transparent to-[#F7F7F5]/40 pointer-events-none" />
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-12 w-full h-full flex flex-col justify-start pt-1.5 sm:pt-2 lg:pt-1 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
+      <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-5 sm:px-6 lg:px-12 2xl:px-16 w-full h-full flex flex-col justify-start pt-1.5 sm:pt-2 lg:pt-1 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] xl:grid-cols-[1.18fr_1fr] gap-8 lg:gap-10 xl:gap-14 2xl:gap-16 items-center">
           
           {/* LEFT CONTENT */}
           <motion.div
-            className="flex flex-col justify-center max-w-[760px] xl:max-w-[780px]"
+            className="flex flex-col justify-center max-w-[760px] xl:max-w-[820px] 2xl:max-w-[880px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
@@ -170,7 +170,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Main Headline — Generous breathing room, comfortable line-height and word spacing */}
-            <h1 className="text-[23px] xs:text-[25px] sm:text-[32px] md:text-[36px] lg:text-[38px] xl:text-[42px] 2xl:text-[44px] font-black leading-[1.28] sm:leading-[1.28] tracking-[-0.015em] text-[#080A09] mb-4 sm:mb-5 max-w-full overflow-x-clip [perspective:1000px]">
+            <h1 className="text-[23px] xs:text-[25px] sm:text-[32px] md:text-[36px] lg:text-[38px] xl:text-[44px] 2xl:text-[48px] font-black leading-[1.28] sm:leading-[1.26] tracking-[-0.015em] text-[#080A09] mb-4 sm:mb-5 max-w-full overflow-x-clip [perspective:1000px]">
               <span className="text-[#080A09] mr-2 sm:mr-3 inline-block">
                 We Develop High&#8209;Quality, Premium
               </span>
@@ -195,7 +195,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-[14.5px] sm:text-[15.5px] lg:text-[16.5px] text-[#525752] font-medium leading-relaxed max-w-[560px] mb-3.5 sm:mb-4"
+              className="text-[14.5px] sm:text-[15.5px] lg:text-[16.5px] xl:text-[17.5px] text-[#525752] font-medium leading-relaxed max-w-[560px] xl:max-w-[620px] mb-3.5 sm:mb-4"
             >
               That inspire, innovate, and drive your business forward.
             </motion.p>

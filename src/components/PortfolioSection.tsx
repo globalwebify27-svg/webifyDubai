@@ -137,7 +137,7 @@ export default function PortfolioSection() {
         />
       </svg>
 
-      <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="relative max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-6 lg:px-12 2xl:px-16">
         
         {/* ===================================================================
             PART 1: EDITORIAL SHOWCASE (DIGITAL TO REALITY + OUR WORK / THEIR SUCCESS)
