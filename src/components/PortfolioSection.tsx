@@ -289,78 +289,88 @@ export default function PortfolioSection() {
               </p>
             </div>
 
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-2 bg-white/80 backdrop-blur-sm p-1.5 rounded-2xl border border-neutral-200/80 shadow-sm">
-              {filterTabs.map((tab) => (
-                <button
-                  key={tab.value}
-                  onClick={() => setActiveFilter(tab.value)}
-                  className={`px-4 py-2 rounded-xl text-[13px] font-bold transition-all duration-200 ${
-                    activeFilter === tab.value
-                      ? "bg-[#080A09] text-white shadow-sm"
-                      : "text-[#626762] hover:text-[#080A09] hover:bg-neutral-100"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            {/* Filter Tabs — Smooth sliding pill indicator, zero layout shake */}
+            <div className="flex flex-wrap items-center gap-1.5 bg-white/90 backdrop-blur-sm p-1.5 rounded-2xl border border-neutral-200/80 shadow-xs">
+              {filterTabs.map((tab) => {
+                const isSelected = activeFilter === tab.value;
+                return (
+                  <button
+                    key={tab.value}
+                    type="button"
+                    onClick={() => setActiveFilter(tab.value)}
+                    className={`relative px-4 py-2 rounded-xl text-[13px] font-bold transition-colors duration-200 select-none cursor-pointer ${
+                      isSelected ? "text-white" : "text-[#626762] hover:text-[#080A09]"
+                    }`}
+                  >
+                    {isSelected && (
+                      <motion.div
+                        layoutId="active-portfolio-tab"
+                        className="absolute inset-0 bg-[#080A09] rounded-xl shadow-xs"
+                        transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                      />
+                    )}
+                    <span className="relative z-10">{tab.label}</span>
+                  </button>
+                );
+              })}
             </div>
           </motion.div>
 
-          {/* 6-Card Portfolio Grid */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-            layout
-          >
-            <AnimatePresence>
-              {filteredProjects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.35 }}
-                  onClick={() => openQuoteModal()}
-                  className="group relative rounded-[22px] overflow-hidden bg-neutral-900 border border-neutral-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgba(0,200,83,0.14)] hover:border-[#00C853] transition-all duration-400 cursor-pointer flex flex-col"
-                >
-                  {/* Card Image Display */}
-                  <div className="relative aspect-[16/10] w-full overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={project.image}
-                      alt={project.alt}
-                      className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
-                      loading="lazy"
-                    />
+          {/* 6-Card Portfolio Grid with Stable Minimum Height to Prevent Screen Shaking */}
+          <div className="min-h-[520px] sm:min-h-[580px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeFilter}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+              >
+                {filteredProjects.map((project) => (
+                  <div
+                    key={project.id}
+                    onClick={() => openQuoteModal()}
+                    className="group relative rounded-[22px] overflow-hidden bg-neutral-900 border border-neutral-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgba(0,200,83,0.14)] hover:border-[#00C853] transition-all duration-300 cursor-pointer flex flex-col"
+                  >
+                    {/* Card Image Display */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={project.image}
+                        alt={project.alt}
+                        className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                        loading="lazy"
+                      />
 
-                    {/* Interactive Hover CTA Pill */}
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                      <span className="inline-flex items-center gap-2 bg-[#00C853] text-[#080A09] px-5 py-2.5 rounded-full text-[13px] font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <span>Visit Project &amp; Get Quote</span>
-                        <ArrowRight size={15} />
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Card Bottom Meta Bar */}
-                  <div className="p-4 bg-white border-t border-neutral-100 flex items-center justify-between">
-                    <div>
-                      <div className="text-[11px] font-bold text-[#00C853] tracking-wider uppercase">
-                        {project.categoryLabel}
-                      </div>
-                      <div className="text-[15px] font-bold text-[#080A09] mt-0.5">
-                        {project.title}
+                      {/* Interactive Hover CTA Pill */}
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                        <span className="inline-flex items-center gap-2 bg-[#00C853] text-[#080A09] px-5 py-2.5 rounded-full text-[13px] font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                          <span>Visit Project &amp; Get Quote</span>
+                          <ArrowRight size={15} />
+                        </span>
                       </div>
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-[#F4F5F4] group-hover:bg-[#00C853] flex items-center justify-center text-[#080A09] group-hover:text-white transition-colors duration-200">
-                      <ExternalLink size={14} />
+
+                    {/* Card Bottom Meta Bar */}
+                    <div className="p-4 bg-white border-t border-neutral-100 flex items-center justify-between">
+                      <div>
+                        <div className="text-[11px] font-bold text-[#00C853] tracking-wider uppercase">
+                          {project.categoryLabel}
+                        </div>
+                        <div className="text-[15px] font-bold text-[#080A09] mt-0.5">
+                          {project.title}
+                        </div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-[#F4F5F4] group-hover:bg-[#00C853] flex items-center justify-center text-[#080A09] group-hover:text-white transition-colors duration-200">
+                        <ExternalLink size={14} />
+                      </div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
+                ))}
+              </motion.div>
             </AnimatePresence>
-          </motion.div>
+          </div>
 
         </div>
 
