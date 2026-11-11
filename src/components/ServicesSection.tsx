@@ -78,8 +78,39 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="bg-[#F8FAFC] pt-8 sm:pt-10 lg:pt-12 pb-14 sm:pb-16 lg:pb-20 border-t border-gray-100">
-      <div className="max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-4 sm:px-6 lg:px-12 2xl:px-16">
+    <section
+      id="services"
+      className="relative bg-[#FAFAF8] pt-10 sm:pt-14 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 border-t border-gray-100 overflow-hidden"
+    >
+      {/* 3D Organic Green Tubular Fluid Ribbon Background — Matching Hero Section */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero-ribbon-bg.jpg"
+          alt=""
+          className="w-full h-full object-cover object-[30%_center] sm:object-center opacity-85 transition-opacity duration-700"
+          loading="lazy"
+        />
+        {/* Smooth vignette fade to blend seamlessly into surrounding #FAFAF8 page background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAF8]/80 via-transparent to-[#FAFAF8]/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAF8]/40 via-transparent to-[#FAFAF8]/40 pointer-events-none" />
+      </div>
+
+      {/* Relatable Tech Matrix Dot-Grid with Radial Falloff */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-50 z-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.22) 1.2px, transparent 0)",
+          backgroundSize: "32px 32px",
+          maskImage:
+            "radial-gradient(ellipse 80% 70% at 50% 45%, black 35%, transparent 95%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 80% 70% at 50% 45%, black 35%, transparent 95%)",
+        }}
+      />
+
+      <div className="relative max-w-[1440px] xl:max-w-[1600px] 2xl:max-w-[1740px] mx-auto px-4 sm:px-6 lg:px-12 2xl:px-16 z-10">
         {/* Header Section — Centered & Balanced */}
         <motion.div
           className="text-center max-w-[1100px] mx-auto mb-8 sm:mb-10 px-4"
