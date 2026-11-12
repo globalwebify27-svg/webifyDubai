@@ -205,12 +205,18 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin
                   size={15}
-                  className="text-[#00C853] flex-shrink-0 mt-0.5"
+                  className="text-[#00C853] flex-shrink-0 mt-1"
                 />
-                <span className="text-[13px] text-white/50 leading-relaxed">
-                  <strong className="text-white/70 font-semibold">Headquarters:</strong> Alam Complex, Kadru, Ranchi, Jharkhand
+                <span className="text-[13px] text-white/60 leading-relaxed">
+                  <strong className="text-white/90 font-semibold">Address Dubai:</strong>
                   <br />
-                  <span className="text-[11px] text-white/40">Offices in Kolkata, Dubai (UAE) &amp; USA</span>
+                  Compass Building, Al Hulaila Industrial Zone, Ras Al Khaimah, UAE
+                  <br />
+                  Marina Diamond 5, Al Marsa Street, Dubai Marina, Dubai, UAE
+                  <br />
+                  <span className="text-[11px] text-white/40 mt-1 block">
+                    Global Delivery: Ranchi, Kolkata &amp; USA
+                  </span>
                 </span>
               </div>
             </div>

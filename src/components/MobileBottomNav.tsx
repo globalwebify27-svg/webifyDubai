@@ -46,14 +46,14 @@ export default function MobileBottomNav() {
           <span className="text-[10px] font-bold tracking-tight text-[#080A09]">Call</span>
         </a>
 
-        {/* WhatsApp — Official full-detail WhatsApp brand glyph */}
+        {/* WhatsApp — Official full-detail WhatsApp brand glyph with pulse & blink */}
         <a
           href="https://wa.me/917563901100"
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 flex flex-col items-center justify-center py-1 text-[#626762] hover:text-[#25D366] active:scale-95 transition-all select-none"
         >
-          <div className="w-9 h-9 rounded-full bg-[#25D366]/15 flex items-center justify-center text-[#25D366] mb-1">
+          <div className="relative w-9 h-9 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366] mb-1 animate-wa-blink">
             <svg
               width="20"
               height="20"
@@ -62,6 +62,11 @@ export default function MobileBottomNav() {
             >
               <path d="M12.004 2C6.48 2 2 6.48 2 12c0 1.96.57 3.79 1.55 5.34L2 22l4.82-1.51A9.96 9.96 0 0 0 12.004 22c5.523 0 10-4.48 10-10s-4.477-10-10-10zm5.82 14.28c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.71-.95-3.28-1.36-5.38-4.7-5.54-4.92-.16-.22-1.33-1.78-1.33-3.39s.85-2.4 1.15-2.73c.3-.33.66-.41.88-.41.22 0 .44 0 .63.01.2.01.48-.08.75.58.28.69.95 2.33 1.03 2.5.08.17.14.37.03.6-.11.22-.17.36-.33.56-.17.2-.35.44-.5.59-.17.17-.34.35-.15.68.2.33.88 1.45 1.89 2.35 1.3 1.16 2.4 1.52 2.74 1.69.34.17.54.14.74-.08.2-.23.87-1.01 1.1-1.36.23-.35.46-.29.77-.18.31.11 1.99.94 2.33 1.11.34.17.57.26.65.4.08.14.08.82-.16 1.5z" />
             </svg>
+            {/* Live Online Ping Badge */}
+            <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366] border border-white"></span>
+            </span>
           </div>
           <span className="text-[10px] font-bold tracking-tight text-[#080A09]">WhatsApp</span>
         </a>

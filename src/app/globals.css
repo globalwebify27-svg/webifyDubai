@@ -49,6 +49,24 @@ body {
   }
 }
 
+/* WhatsApp Mobile Nav Pulse & Blink */
+@keyframes wa-pulse-blink {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 9px rgba(37, 211, 102, 0);
+    opacity: 0.85;
+  }
+}
+
+.animate-wa-blink {
+  animation: wa-pulse-blink 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 /* Offset Next.js dev overlay indicator above the mobile bottom nav */
 @media (max-width: 768px) {
   nextjs-portal,
