@@ -213,7 +213,9 @@ export default function Footer() {
                   Compass Building, Al Hulaila Industrial Zone, Ras Al Khaimah, UAE
                   <br />
                   Marina Diamond 5, Al Marsa Street, Dubai Marina, Dubai, UAE
-                  <br />
+                  <span className="text-[11.5px] text-[#00C853] font-medium mt-1.5 block">
+                    In Collaborative Partnership with <strong className="text-white font-semibold">IS Technologies FZ-LLC</strong>
+                  </span>
                   <span className="text-[11px] text-white/40 mt-1 block">
                     Global Delivery: Ranchi, Kolkata &amp; USA
                   </span>
