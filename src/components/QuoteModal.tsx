@@ -64,7 +64,7 @@ export default function QuoteModal() {
 
     window.addEventListener("open-quote-modal", handleOpen);
 
-    // Auto-open modal after 6 seconds (between 5 and 7 seconds)
+    // Auto-open modal after 1 minute (60 seconds)
     const autoOpenTimer = setTimeout(() => {
       setIsOpen((prev) => {
         if (!prev) {
@@ -74,7 +74,7 @@ export default function QuoteModal() {
         }
         return prev;
       });
-    }, 6000);
+    }, 60000);
 
     return () => {
       window.removeEventListener("open-quote-modal", handleOpen);

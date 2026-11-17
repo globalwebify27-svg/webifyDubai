@@ -184,13 +184,18 @@ export default function Footer() {
                   connect@globalwebify.com
                 </span>
               </a>
-              <a href="tel:+971582973805" className="flex items-start gap-3 group">
+              <a
+                href="https://wa.me/971582973805?text=Hi%20Global%20Webify%2C%20I%20am%20interested%20in%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
                 <Phone
                   size={15}
                   className="text-[#00C853] flex-shrink-0 mt-0.5"
                 />
                 <span className="text-[13px] text-white/50 group-hover:text-white transition-colors duration-200">
-                  +971 58 297 3805 <span className="text-[11px] text-white/30">(UAE Direct)</span>
+                  +971 58 297 3805 <span className="text-[11px] text-[#25D366] font-medium">(UAE Direct &amp; WhatsApp)</span>
                 </span>
               </a>
               <a href="tel:+917563901100" className="flex items-start gap-3 group">

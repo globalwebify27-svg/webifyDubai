@@ -114,21 +114,23 @@ export default function LeadFormSection() {
               <div className="text-[11.5px] sm:text-[12px] font-bold text-[#626762] uppercase tracking-wider mb-2">
                 Need Immediate Assistance?
               </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 flex-wrap">
+                <a
+                  href="https://wa.me/971582973805?text=Hi%20Global%20Webify%2C%20I%20am%20interested%20in%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[13.5px] sm:text-[14px] font-bold text-[#080A09] hover:text-[#25D366] transition-colors"
+                >
+                  <span className="w-2 h-2 rounded-full bg-[#25D366]" />
+                  WhatsApp (UAE): +971 58 297 3805
+                </a>
                 <a
                   href="https://wa.me/917563901100"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[13.5px] sm:text-[14px] font-bold text-[#080A09] hover:text-[#00C853] transition-colors"
+                  className="text-[12.5px] sm:text-[13px] text-[#626762] hover:text-[#080A09] inline-flex items-center gap-1.5"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#00C853]" />
-                  Chat on WhatsApp: +91 75639 01100
-                </a>
-                <a
-                  href="tel:+971582973805"
-                  className="text-[12.5px] sm:text-[13px] text-[#626762] hover:text-[#080A09]"
-                >
-                  UAE Direct: +971 58 297 3805
+                  <span>WhatsApp (India): +91 75639 01100</span>
                 </a>
               </div>
             </div>
@@ -337,7 +339,7 @@ export default function LeadFormSection() {
                   {/* Immediate WhatsApp Action */}
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
-                      href="https://wa.me/917563901100"
+                      href="https://wa.me/971582973805?text=Hi%20Global%20Webify%2C%20I%20just%20submitted%20a%20project%20inquiry."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#1a8b4c] text-white text-[14px] font-bold px-6 py-3 rounded-full hover:bg-[#15733f] transition-all shadow-sm"

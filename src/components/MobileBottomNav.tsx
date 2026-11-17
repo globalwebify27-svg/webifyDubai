@@ -48,7 +48,7 @@ export default function MobileBottomNav() {
 
         {/* WhatsApp — Official full-detail WhatsApp brand glyph with pulse & blink */}
         <a
-          href="https://wa.me/917563901100"
+          href="https://wa.me/971582973805?text=Hi%20Global%20Webify%2C%20I%20am%20interested%20in%20your%20services."
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 flex flex-col items-center justify-center py-1 text-[#626762] hover:text-[#25D366] active:scale-95 transition-all select-none"

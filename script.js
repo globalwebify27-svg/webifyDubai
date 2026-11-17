@@ -346,12 +346,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Auto-open quote modal after 6 seconds (between 5 and 7 seconds)
+  // Auto-open quote modal after 1 minute (60 seconds)
   setTimeout(() => {
     if (quoteModal && !quoteModal.classList.contains("active")) {
       openQuoteModal();
     }
-  }, 6000);
+  }, 60000);
 
   window.setMobileBottomActive = function(el) {
     document.querySelectorAll(".mobile-bottom-item").forEach((item) => {

@@ -297,23 +297,44 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                {/* UAE Direct Phone Card */}
-                <div className="shrink-0 sm:w-[210px] lg:w-[225px] flex">
-                  <div className="bg-white p-3 sm:py-3 sm:px-3.5 rounded-xl border-2 border-[#00C853] flex items-center gap-3 shadow-xs hover:shadow-md transition-all duration-200 w-full h-full">
-                    <div className="w-9 h-9 shrink-0 rounded-full bg-[#E8F8EE] flex items-center justify-center text-[#00C853]">
-                      <PhoneCall size={18} />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-[9.5px] sm:text-[10px] font-bold text-[#626762] tracking-wider uppercase leading-none mb-1 whitespace-nowrap">
-                        DIRECT / UAE
-                      </p>
+                {/* UAE Direct & WhatsApp Card */}
+                <div className="shrink-0 sm:w-[230px] lg:w-[245px] flex">
+                  <div className="bg-white p-2.5 sm:py-2.5 sm:px-3 rounded-xl border-2 border-[#00C853] flex items-center justify-between gap-2 shadow-xs hover:shadow-md transition-all duration-200 w-full h-full">
+                    <div className="flex items-center gap-2.5 min-w-0">
                       <a
                         href="tel:+971582973805"
-                        className="text-[13.5px] sm:text-[15px] font-black text-[#080A09] hover:text-[#00C853] transition-colors tracking-tight block whitespace-nowrap leading-tight"
+                        title="Call UAE Direct"
+                        aria-label="Call UAE Direct"
+                        className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 rounded-full bg-[#E8F8EE] hover:bg-[#00C853] hover:text-white flex items-center justify-center text-[#00C853] transition-colors"
                       >
-                        +971 58 297 3805
+                        <PhoneCall size={17} />
                       </a>
+                      <div className="min-w-0">
+                        <p className="text-[9px] sm:text-[9.5px] font-bold text-[#626762] tracking-wider uppercase leading-none mb-1 whitespace-nowrap">
+                          DIRECT / UAE
+                        </p>
+                        <a
+                          href="tel:+971582973805"
+                          className="text-[13px] sm:text-[14.5px] font-black text-[#080A09] hover:text-[#00C853] transition-colors tracking-tight block whitespace-nowrap leading-tight"
+                        >
+                          +971 58 297 3805
+                        </a>
+                      </div>
                     </div>
+
+                    {/* Instant WhatsApp Quick Button */}
+                    <a
+                      href="https://wa.me/971582973805?text=Hi%20Global%20Webify%2C%20I%20am%20interested%20in%20your%20services."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Chat on WhatsApp (+971 58 297 3805)"
+                      aria-label="Chat on WhatsApp (+971 58 297 3805)"
+                      className="w-8 h-8 shrink-0 rounded-full bg-[#25D366]/15 hover:bg-[#25D366] hover:text-white flex items-center justify-center text-[#25D366] transition-all hover:scale-110 active:scale-95 shadow-xs"
+                    >
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.004 2C6.48 2 2 6.48 2 12c0 1.96.57 3.79 1.55 5.34L2 22l4.82-1.51A9.96 9.96 0 0 0 12.004 22c5.523 0 10-4.48 10-10s-4.477-10-10-10zm5.82 14.28c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.71-.95-3.28-1.36-5.38-4.7-5.54-4.92-.16-.22-1.33-1.78-1.33-3.39s.85-2.4 1.15-2.73c.3-.33.66-.41.88-.41.22 0 .44 0 .63.01.2.01.48-.08.75.58.28.69.95 2.33 1.03 2.5.08.17.14.37.03.6-.11.22-.17.36-.33.56-.17.2-.35.44-.5.59-.17.17-.34.35-.15.68.2.33.88 1.45 1.89 2.35 1.3 1.16 2.4 1.52 2.74 1.69.34.17.54.14.74-.08.2-.23.87-1.01 1.1-1.36.23-.35.46-.29.77-.18.31.11 1.99.94 2.33 1.11.34.17.57.26.65.4.08.14.08.82-.16 1.5z" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
