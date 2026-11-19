@@ -13,6 +13,7 @@ const featuredHighlights = [
     subtitle: "Education Platform & SEO",
     image: "/thumb-firayalal.jpg",
     alt: "Firayalal Public School modern campus platform",
+    url: "https://firayalalpublicschool.edu.in/",
   },
   {
     num: "02",
@@ -21,6 +22,7 @@ const featuredHighlights = [
     subtitle: "Web Platform & Food Services",
     image: "/thumb-acs.jpg",
     alt: "ACS Ranchi dining & hospitality digital system",
+    url: "https://acs-jn.com/",
   },
 ];
 
@@ -33,6 +35,7 @@ const websitePortfolio = [
     subtitle: "Education Platform & SEO",
     image: "/portfolio-firayalal.jpg",
     alt: "Firayalal Public School - Education Website by Global Webify",
+    url: "https://firayalalpublicschool.edu.in/",
   },
   {
     id: "acs",
@@ -42,6 +45,7 @@ const websitePortfolio = [
     subtitle: "Cafe & Store Franchise Platform",
     image: "/portfolio-acs.jpg",
     alt: "ACS Ranchi - Restaurant Website by Global Webify",
+    url: "https://acs-jn.com/",
   },
   {
     id: "kaveri",
@@ -51,6 +55,7 @@ const websitePortfolio = [
     subtitle: "Multi-Location Fine Dining & Booking",
     image: "/portfolio-kaveri.jpg",
     alt: "Kaveri Restaurant - Dining Experience Website by Global Webify",
+    url: "https://kaveri-nextjs.vercel.app/",
   },
   {
     id: "healthpoint",
@@ -60,6 +65,7 @@ const websitePortfolio = [
     subtitle: "Multi-Specialty Hospital & Doctors Portal",
     image: "/portfolio-healthpoint.jpg",
     alt: "Health Point Ranchi - Healthcare Hospital Website by Global Webify",
+    url: "https://healthpointranchi.com/",
   },
   {
     id: "drkumar",
@@ -69,6 +75,7 @@ const websitePortfolio = [
     subtitle: "Orthopedic Specialist & Consultations",
     image: "/portfolio-drkumar.jpg",
     alt: "Dr. Kumar Vishal - Orthopedic Healthcare Website by Global Webify",
+    url: "https://drkumarvishal.com/",
   },
   {
     id: "rps",
@@ -78,6 +85,7 @@ const websitePortfolio = [
     subtitle: "Advanced Critical Care & Emergency",
     image: "/portfolio-rps.jpg",
     alt: "RPS Hospital - Hospital & Healthcare Platform by Global Webify",
+    url: "https://rpshospital.com/",
   },
 ];
 
@@ -216,13 +224,16 @@ export default function PortfolioSection() {
             {/* Quick Highlight Cards */}
             <div className="flex flex-col gap-4">
               {featuredHighlights.map((project, i) => (
-                <motion.div
+                <motion.a
                   key={project.num}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Visit ${project.title} live website`}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.25 + i * 0.1, duration: 0.45 }}
-                  onClick={() => openQuoteModal()}
                   className="bg-white rounded-[20px] sm:rounded-[22px] p-3.5 sm:p-4.5 border border-[#ECEEEC] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] hover:border-[#00C853]/40 transition-all duration-300 flex items-center justify-between gap-4 cursor-pointer group"
                 >
                   {/* Left Thumbnail */}
@@ -256,7 +267,7 @@ export default function PortfolioSection() {
                       className="text-[#080A09] group-hover:text-white transition-colors duration-300"
                     />
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
 
@@ -328,9 +339,12 @@ export default function PortfolioSection() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
               >
                 {filteredProjects.map((project) => (
-                  <div
+                  <a
                     key={project.id}
-                    onClick={() => openQuoteModal()}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Visit ${project.title} live website`}
                     className="group relative rounded-[22px] overflow-hidden bg-neutral-900 border border-neutral-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgba(0,200,83,0.14)] hover:border-[#00C853] transition-all duration-300 cursor-pointer flex flex-col"
                   >
                     {/* Card Image Display */}
@@ -346,8 +360,8 @@ export default function PortfolioSection() {
                       {/* Interactive Hover CTA Pill */}
                       <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
                         <span className="inline-flex items-center gap-2 bg-[#00C853] text-[#080A09] px-5 py-2.5 rounded-full text-[13px] font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                          <span>Visit Project &amp; Get Quote</span>
-                          <ArrowRight size={15} />
+                          <span>Visit Live Website</span>
+                          <ExternalLink size={15} />
                         </span>
                       </div>
                     </div>
@@ -358,7 +372,7 @@ export default function PortfolioSection() {
                         <div className="text-[11px] font-bold text-[#00C853] tracking-wider uppercase">
                           {project.categoryLabel}
                         </div>
-                        <div className="text-[15px] font-bold text-[#080A09] mt-0.5">
+                        <div className="text-[15px] font-bold text-[#080A09] mt-0.5 group-hover:text-[#00C853] transition-colors">
                           {project.title}
                         </div>
                       </div>
@@ -366,7 +380,7 @@ export default function PortfolioSection() {
                         <ExternalLink size={14} />
                       </div>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </motion.div>
             </AnimatePresence>
