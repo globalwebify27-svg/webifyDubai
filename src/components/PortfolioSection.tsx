@@ -206,17 +206,19 @@ export default function PortfolioSection() {
               Explore how we turn complex business challenges into powerful digital solutions that deliver real results.
             </p>
 
-            {/* Link with signature green underline bar -> scrolls to Website Portfolio */}
+            {/* Link with signature green underline bar -> redirects to full portfolio */}
             <div className="mb-8">
               <a
-                href="#website-portfolio"
-                onClick={scrollToPortfolio}
-                className="inline-flex items-center gap-1.5 text-[15px] font-bold text-[#080A09] border-b-2 border-[#00C853] pb-1 hover:text-[#00C853] transition-colors group cursor-pointer"
+                href="https://www.globalwebify.com/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[15px] sm:text-[16px] font-bold text-[#00C853] border-b-2 border-[#00C853] pb-1 hover:text-[#00a846] hover:border-[#00a846] transition-colors group cursor-pointer"
+                title="Explore Our Projects on Global Webify"
               >
                 <span>Explore Our Projects</span>
                 <ArrowUpRight
                   size={16}
-                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#080A09] group-hover:text-[#00C853]"
+                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#00C853] group-hover:text-[#00a846]"
                 />
               </a>
             </div>
@@ -300,30 +302,43 @@ export default function PortfolioSection() {
               </p>
             </div>
 
-            {/* Filter Tabs — Smooth sliding pill indicator, zero layout shake */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-white/90 backdrop-blur-sm p-1.5 rounded-2xl border border-neutral-200/80 shadow-xs">
-              {filterTabs.map((tab) => {
-                const isSelected = activeFilter === tab.value;
-                return (
-                  <button
-                    key={tab.value}
-                    type="button"
-                    onClick={() => setActiveFilter(tab.value)}
-                    className={`relative px-4 py-2 rounded-xl text-[13px] font-bold transition-colors duration-200 select-none cursor-pointer ${
-                      isSelected ? "text-white" : "text-[#626762] hover:text-[#080A09]"
-                    }`}
-                  >
-                    {isSelected && (
-                      <motion.div
-                        layoutId="active-portfolio-tab"
-                        className="absolute inset-0 bg-[#080A09] rounded-xl shadow-xs"
-                        transition={{ type: "spring", stiffness: 450, damping: 35 }}
-                      />
-                    )}
-                    <span className="relative z-10">{tab.label}</span>
-                  </button>
-                );
-              })}
+            {/* Filter Tabs & View All Button */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="flex flex-wrap items-center gap-1.5 bg-white/90 backdrop-blur-sm p-1.5 rounded-2xl border border-neutral-200/80 shadow-xs">
+                {filterTabs.map((tab) => {
+                  const isSelected = activeFilter === tab.value;
+                  return (
+                    <button
+                      key={tab.value}
+                      type="button"
+                      onClick={() => setActiveFilter(tab.value)}
+                      className={`relative px-4 py-2 rounded-xl text-[13px] font-bold transition-colors duration-200 select-none cursor-pointer ${
+                        isSelected ? "text-white" : "text-[#626762] hover:text-[#080A09]"
+                      }`}
+                    >
+                      {isSelected && (
+                        <motion.div
+                          layoutId="active-portfolio-tab"
+                          className="absolute inset-0 bg-[#080A09] rounded-xl shadow-xs"
+                          transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                        />
+                      )}
+                      <span className="relative z-10">{tab.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <a
+                href="https://www.globalwebify.com/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#00C853] hover:bg-[#00b047] text-[#080A09] font-bold text-[13px] shadow-sm hover:shadow-[0_4px_16px_rgba(0,200,83,0.3)] transition-all duration-200 group"
+                title="View All Projects on Global Webify"
+              >
+                <span>View All</span>
+                <ExternalLink size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </div>
           </motion.div>
 
@@ -384,6 +399,19 @@ export default function PortfolioSection() {
                 ))}
               </motion.div>
             </AnimatePresence>
+          </div>
+
+          {/* View All Projects CTA Button */}
+          <div className="mt-12 sm:mt-14 text-center">
+            <a
+              href="https://www.globalwebify.com/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#080A09] hover:bg-[#00C853] text-white hover:text-[#080A09] px-7 sm:px-9 py-3.5 sm:py-4 rounded-2xl text-[14px] sm:text-[15px] font-bold shadow-md hover:shadow-[0_12px_28px_rgba(0,200,83,0.25)] transition-all duration-300 group cursor-pointer"
+            >
+              <span>View All Projects</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+            </a>
           </div>
 
         </div>
